@@ -1,0 +1,44 @@
+.inputContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 30rem; 
+    align-items: center;
+}
+
+.input-label {
+    font-size: 2.2rem;
+    color: var(--text-login);
+    text-align: start;
+    align-self: flex-start; 
+}
+
+.input-type{
+    height: 5rem;
+    width: 100%;
+    border-radius: 1rem;
+    padding: 1rem;
+    font-size: 1.7rem;
+    border: 1px solid var(--border-input);
+    text-align: flex-start;
+    background-color: var(--background-input);
+}
+
+.input-type:focus {
+    border-color: var(--title-color);
+    outline: none;
+}
+
+.error-container{
+    height: 1.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.error-message{
+    color: var(--error-msg);
+    font-size: 1.5rem;
+    text-align: left;
+}
+

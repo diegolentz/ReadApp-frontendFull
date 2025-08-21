@@ -1,0 +1,36 @@
+.loginView{
+  background-image: url("../../assets/Firefly-una-libreria-en-una-calle-concurrida-60265-scaled.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginContainer{
+  width: 40rem;
+  height: 45rem;
+  border: 1px solid var(--border-input);
+  backdrop-filter: blur(10px);
+  background: var(--background-login);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: 2rem;
+}
+
+.loginTitle{
+  color: var(--text-login);
+}
+
+.loginForm{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}

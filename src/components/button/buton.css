@@ -1,0 +1,7 @@
+.buttonApp{
+    width: 10rem;
+    height: 4.5rem;
+    border-radius: 1rem;
+    background: var(--button-acept);
+    color: white;
+}
