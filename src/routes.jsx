@@ -1,5 +1,6 @@
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import {Login} from "./views/login/login";
+import { Login } from "./views/login/login";
 
 export const AppRouter = () => {
   return (

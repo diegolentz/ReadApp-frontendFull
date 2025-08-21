@@ -1,11 +1,13 @@
 import axios from 'axios';
 
-class LoginService {
+// @ts-ignore
+const API_URL = import.meta.env.VITE_API_URL;
 
-    async login(userData) {
-        const res = await axios.post("http://localhost:8080/login", userData);
-        return res.data;
-    }
+class LoginService {
+  async login(userData) {
+    const res = await axios.post(`${API_URL}/login`, userData);
+    return res.data;
+  }
 }
 
 export const loginService = new LoginService();

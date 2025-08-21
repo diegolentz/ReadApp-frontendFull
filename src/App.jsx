@@ -1,8 +1,13 @@
-import { AppRouter } from './routes'
+import React from "react";
+import { ToastProvider } from './context/toast/toastProvider.jsx';
+import { AppRouter } from './routes';
 
 function App() {
-
-  return <AppRouter/>
+  return (
+    <ToastProvider>
+      <AppRouter />
+    </ToastProvider>
+  );
 }
 
-export default App
+export default App;

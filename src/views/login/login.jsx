@@ -1,11 +1,14 @@
+import React from "react";
 import { useForm } from 'react-hook-form';
-import { InputApp } from '../../components/input/input';
-import './login.css';
 import { ButtonApp } from '../../components/button/buton';
+import { InputApp } from '../../components/input/input';
 import { loginService } from '../../services/loginService';
+import './login.css';
+import { useToast } from "../../context/toast/toastContext";
+
 
 export const Login = () => {
-  const { register, handleSubmit, getValues, formState: { errors }, reset } = useForm({
+  const { register, getValues, reset, formState: { errors }, handleSubmit } = useForm({
     mode: 'all',
     defaultValues: {
       username: '',
@@ -13,17 +16,29 @@ export const Login = () => {
     }
   });
 
+  const { open } = useToast();
+
   const onSubmit = async () => {
+
     try {
       const values = getValues();
       const res = await loginService.login(values);
       if (res) {
-        sessionStorage.setItem('user', JSON.stringify(res));
-      } 
+        sessionStorage.setItem('user', JSON.stringify(res.id));
+        sessionStorage.setItem('name', JSON.stringify(res.name));
+        sessionStorage.setItem('lastname', JSON.stringify(res.lastname));
+        sessionStorage.setItem('img', JSON.stringify(res.img));
+
+        open('Iniciando sesión', "success");
+        reset();
+      }
+
     } catch (error) {
-      console.error(error.message);
+      reset();
+
+      console.log('Login error:', error);
+      open(error.response.data.message, "error");
     }
-    reset();
   };
 
   return (
