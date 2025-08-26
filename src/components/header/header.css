@@ -1,0 +1,40 @@
+header{
+    /* width: 100vw; */
+    padding: 1rem;
+    background-color: #EDC3AC;
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.headerLogo{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerLinks{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+    margin-right: 3rem;
+}
+
+.headerLinks a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.headerImg{
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius:50%;
+    background-color: red;
+}

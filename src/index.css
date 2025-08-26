@@ -4,17 +4,40 @@
 	box-sizing: border-box;
 }
 
-html, body{
+html, body, #root{
     width: 100vw;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    font-size: 62.5%;
     /* 10px = 1rem */
+    font-size: 62.5%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+   
+}
+
+/* WebKit browsers */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+#root::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent;
 }
 
 h1{
     font-size: 3rem;
+}
+
+h2{
+    font-size: 2.5rem;
+}
+h3{
+    font-size: 1.8rem;
+}
+
+p{
+    font-size: 1.4rem;
 }
 
 :root{

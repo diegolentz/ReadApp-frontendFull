@@ -5,6 +5,7 @@ import { InputApp } from '../../components/input/input';
 import { loginService } from '../../services/loginService';
 import './login.css';
 import { useToast } from "../../context/toast/toastContext";
+import { useNavigate } from "react-router-dom";
 
 
 export const Login = () => {
@@ -17,6 +18,7 @@ export const Login = () => {
   });
 
   const { open } = useToast();
+  const nav = useNavigate();
 
   const onSubmit = async () => {
 
@@ -28,9 +30,13 @@ export const Login = () => {
         sessionStorage.setItem('name', JSON.stringify(res.name));
         sessionStorage.setItem('lastname', JSON.stringify(res.lastname));
         sessionStorage.setItem('img', JSON.stringify(res.img));
+        reset();
 
         open('Iniciando sesión', "success");
-        reset();
+        setTimeout(() => {
+          nav('/libros');
+
+        }, 500);
       }
 
     } catch (error) {
