@@ -2,6 +2,7 @@ import React from "react";
 import './bookCard.css'
 
 export const BookCard = ({ book }) => {
+    if (!book || !book.author) return null; // evita romper
     return (
         <>
             <div className="containerCard">
@@ -17,11 +18,6 @@ export const BookCard = ({ book }) => {
                 <div className="img">
                     <img src={book.img} alt={book.title} />
                 </div>
-                    <div className="icons">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
                 <div className="actionsCard">
                     <button className="buttonCard">Agregar +</button>
                 </div>

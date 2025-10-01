@@ -3,7 +3,7 @@ import { SearchComponent } from './../search/search';
 import "./header.css";
 import React from "react";
 
-export const HeaderComponent = () => {
+export const HeaderComponent = ({method, withSearch}) => {
   const rawImg = sessionStorage.getItem("img");
   const img = rawImg ? rawImg.replace(/^["']|["']$/g, "") : "";
 
@@ -18,21 +18,21 @@ export const HeaderComponent = () => {
         </div>
         <h2>Read App</h2>
       </div>
+      <div className="headerActions">
+        <SearchComponent method={method} withSearch={withSearch} />
+        <button className="buttonProfile">
+        </button>
+      </div>
       <nav className="headerLinks">
         <NavLink to="/libros"><h2>Libros</h2></NavLink>
         <NavLink to="/recomendaciones"><h2>Recomendaciones</h2></NavLink>
-      </nav>
-      <div className="headerActions">
-        <SearchComponent />
-        <button className="buttonProfile">
           <div className="headerProfile">
 
-            <NavLink to="/recomendaciones">
+            <NavLink to="/perfil/datos">
               <img src={img} alt="profile" />
             </NavLink>
           </div>
-        </button>
-      </div>
+      </nav>
     </header>
   );
 };

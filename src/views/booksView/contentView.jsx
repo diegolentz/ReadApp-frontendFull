@@ -1,43 +1,49 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 import { BookCard } from "../../components/bookCard/bookcard";
+import { HeaderComponent } from "../../components/header/header";
+import { RecomendationCard } from "../../components/recomendationCard/recomendationCard";
 import { bookService } from "../../services/bookService";
-import './contentView.css';
-import { HeaderComponent } from '../../components/header/header';
+import { recomendationService } from "../../services/recomendationService";
+import "./contentView.css";
 
-export const BookView = () => {
+export const BookView = ({ isBooks }) => {
+  const [data, setData] = useState([]);
 
-    const [data, setData] = useState([]);
-    const location = useLocation();
-    const reBooks = location.pathname.includes("libros");
+  const getBook = async (text) => {
+    const res = await bookService.getByText(text);
+    setData(res);
+  };
 
+  useEffect(() => {
     const fetchData = async () => {
-
+      setData([]); // limpia antes de cargar
+      if (isBooks) {
         const res = await bookService.getAll();
         setData(res);
+      } else {
+        const res = await recomendationService.getRecommendations();
+        setData(res);
+      }
     };
-    useEffect(
-        () => {
-            fetchData();
-        }, []
-    )
+    fetchData();
+  }, [isBooks]); 
 
-    return (
-        <>
-            <HeaderComponent />
-            <div className="viewsContainer">
-                {reBooks && (
-                    <>
-                        {data.map((book, index) => (
-                            <BookCard key={index} book={book} />
-                        ))}
-                    </>
-                )}
+  useEffect(() => {
+    console.log("Data actualizado:", data);
+  }, [data]);
 
-                {!reBooks && (
-                    <p>No books available</p>
-                )}
-            </div>
-        </>
-    )
-}
+  return (
+    <>
+      <HeaderComponent method={getBook} withSearch={true} />
+      <div className="viewsContainer">
+        {isBooks
+          ? data.map((rec, index) => (
+              <BookCard key={index} book={rec} />
+            ))
+          : data.map((rec, index) => (
+              <RecomendationCard key={index} recomendation={rec} />
+            ))}
+      </div>
+    </>
+  );
+};

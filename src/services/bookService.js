@@ -8,6 +8,12 @@ class BookService {
     const res = await axios.get(`${API_URL}/books`);
     return res.data;
   }
+
+  async getByText(text) {
+    console.log(text);
+    const res = await axios.get(`${API_URL}/books/search?text=${text}`);
+    return res.data;
+  }
 }
 
 export const bookService = new BookService();

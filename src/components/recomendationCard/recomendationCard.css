@@ -1,0 +1,66 @@
+.recomendationCard {
+    width: 28rem;
+    height: 40rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    gap: 0.5rem;
+    border: 1px solid #ccc;
+}
+
+.recomendationCard-img {
+    width: 26rem;
+    height: 20rem;
+    object-fit: cover;
+    border-radius: 1rem;
+
+}
+
+.recomendationBooks{
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+}
+
+
+.bkg-0 { background: radial-gradient(circle, #e57373 40%, #fff 110%);
+filter: brightness(0.9);}   /* Rojo claro */
+.bkg-1 { background: radial-gradient(circle, #da628a 40%, #fff 110%);
+filter: brightness(0.9);}   /* Rosa */
+.bkg-2 { background: radial-gradient(circle, #ba68c8 40%, #fff 110%); 
+filter: brightness(0.9);}   /* Morado */
+.bkg-3 { background: radial-gradient(circle, #64b5f6 40%, #fff 110%); 
+filter: brightness(0.9);}   /* Azul claro */
+.bkg-4 { background: radial-gradient(circle, #4dd0e1 40%, #fff 110%); 
+filter: brightness(0.9);}   /* Cian */
+.bkg-5 { background: radial-gradient(circle, #4db6ac 40%, #fff 110%); 
+filter: brightness(0.9);}   /* Verde azulado */
+.bkg-6 { background: radial-gradient(circle, #81c784 40%, #fff 110%); 
+filter: brightness(0.9);}   /* Verde claro */
+.bkg-7 { background: radial-gradient(circle, #dce775 40%, #fff 110%); 
+filter: brightness(0.9);}   /* Lima */
+.bkg-8 { background: radial-gradient(circle, #ffd54f 40%, #fff 110%); 
+filter: brightness(0.9);}   /* Amarillo */
+.bkg-9 { background: radial-gradient(circle, #ffb74d 40%, #fff 110%); 
+filter: brightness(0.9);}   /* Naranja claro */
+.bkg-10 { background: radial-gradient(circle, #a1887f 40%, #fff 110%);
+filter: brightness(0.9); }  /* Marrón */
+.bkg-11 { background: radial-gradient(circle, #90a4ae 40%, #fff 110%);
+filter: brightness(0.9); }  /* Azul grisáceo */
+.bkg-12 { background: radial-gradient(circle, #f8bbd0 40%, #fff 110%);
+filter: brightness(0.9); }  /* Rosa pálido */
+.bkg-13 { background: radial-gradient(circle, #cfd8dc 40%, #fff 110%);
+filter: brightness(0.9); }  /* Gris claro */
+.bkg-14 { background: radial-gradient(circle, #b0bec5 40%, #fff 110%);
+filter: brightness(0.9); }  /* Gris azulado */

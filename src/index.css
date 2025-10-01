@@ -13,6 +13,7 @@ html, body, #root{
     font-size: 62.5%;
     overflow-x: hidden;
     overflow-y: scroll;
+    background-color: var(--backGround-color);
    
 }
 
@@ -55,4 +56,5 @@ a{
     --background-input:#E4CFCF;
     --error-msg:rgb(255, 56, 56);
     --background-login: rgba(44, 41, 41, 0.6);
+    --backGround-color: #FAF3E7;
 }
