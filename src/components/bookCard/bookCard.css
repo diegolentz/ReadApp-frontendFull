@@ -52,11 +52,11 @@
     grid-area: info;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 1rem;
 
-    /* padding: 1rem; */
+    padding: 0.5rem;
 }
 
 .img {

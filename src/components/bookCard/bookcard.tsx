@@ -14,12 +14,14 @@ export const BookCard = ({ book }) => {
                     <p>Por: {book.author.name} {book.author.lastname}</p>
                     <p>Paginas: {book.pages}</p>
                     <p>Traducciones: {book.translations.length} idiomas</p>
+                    <p>{book.genere}</p>
+                    <p>Precio: ${book.price}</p>
                 </div>
                 <div className="img">
                     <img src={book.img} alt={book.title} />
                 </div>
                 <div className="actionsCard">
-                    <button className="buttonCard">Agregar +</button>
+                    <button className="buttonCard">Comprar +</button>
                 </div>
             </div>
         </>

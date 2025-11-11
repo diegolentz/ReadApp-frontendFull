@@ -1,25 +1,30 @@
-header{
-    width: 100vw; 
+header {
+    width: 100vw;
+    height: var(--header-heigth);
     padding-left: 2rem;
     padding-right: 2rem;
-    background-color: #EDC3AC;
-    height: 7rem;
-    width: 100vw;
+    background: linear-gradient(270deg, #f1934f 10%, #EDC3AC 100%);
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
-.headerLogo{
+
+.headerLogo {
     display: flex;
     flex-direction: row;
     gap: 1rem;
     justify-content: center;
     align-items: center;
+    z-index: 100;
 }
 
-.headerLinks{
+.headerLinks {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -33,7 +38,7 @@ header{
     cursor: pointer;
 }
 
-.headerImg{
+.headerImg {
     width: 10rem;
     height: 5rem;
 }
@@ -48,33 +53,33 @@ header{
     filter: grayscale(60%);
 }
 
-.headerActions{
+.headerActions {
     display: flex;
     align-items: center;
-    /* width: 100%; */
-    /* gap: 2rem; */
     justify-content: center;
     align-items: center;
 }
 
 
-.buttonProfile{
+.buttonProfile {
     background: none;
     border: none;
     cursor: pointer;
 }
 
-.headerProfile{
-    width: 5.5rem;
-    height: 5.5rem;
+.headerProfile {
+    width: 6.5rem;
+    height: 6.5rem;
     border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid transparent;
-    background: linear-gradient(120deg, rgb(24, 151, 7), #9b0d12) border-box;
+    border: 2px solid black;
+    
     & img {
         width: 100%;
         height: 100%;
         border-radius: 50%;
+        object-fit: cover;
     }
 }
+
+
 

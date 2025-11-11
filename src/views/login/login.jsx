@@ -6,6 +6,7 @@ import { loginService } from '../../services/loginService';
 import './login.css';
 import { useToast } from "../../context/toast/toastContext";
 import { useNavigate } from "react-router-dom";
+import { useImg } from "../../context/toastImg/toastImgContext";
 
 
 export const Login = () => {
@@ -17,9 +18,11 @@ export const Login = () => {
     }
   });
 
+
+
   const { open } = useToast();
   const nav = useNavigate();
-
+  const {updateImg} = useImg();
   const onSubmit = async () => {
 
     try {
@@ -27,15 +30,15 @@ export const Login = () => {
       const res = await loginService.login(values);
       if (res) {
         sessionStorage.setItem('user', JSON.stringify(res.id));
-        sessionStorage.setItem('name', JSON.stringify(res.name));
-        sessionStorage.setItem('lastname', JSON.stringify(res.lastname));
-        sessionStorage.setItem('img', JSON.stringify(res.img));
+        // sessionStorage.setItem('name', JSON.stringify(res.name));
+        // sessionStorage.setItem('lastname', JSON.stringify(res.lastname));
+        // sessionStorage.setItem('img', JSON.stringify(res.img));
         reset();
 
         open('Iniciando sesión', "success");
         setTimeout(() => {
           nav('/libros');
-
+          updateImg(res.img);
         }, 500);
       }
 

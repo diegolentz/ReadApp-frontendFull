@@ -1,0 +1,45 @@
+
+.dataUser {
+    /* border : 2px solid #e6d6c5; */
+    /* border-radius: 2rem; */
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 80rem);
+    height: 85%;
+    padding: 2rem;
+    border: 3px solid #e6d6c5;
+    border-radius: 1rem;
+    background-color: antiquewhite;
+    justify-content: center;
+    align-items: center;
+}
+
+.formularyProfile{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.sectionData {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 30rem));
+    grid-template-rows: auto;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+
+    gap: 2rem;
+}
+
+
+.buttonsProfile{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 2rem;
+}

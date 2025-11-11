@@ -1,0 +1,82 @@
+.sectionImgSaldo {
+    max-height: 100%;
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #e6d6c5;
+    border-radius: 1rem;
+    background-color: antiquewhite;
+    padding: 3rem;
+
+}
+
+.imgNameUser {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    justify-content: flex-start;
+    height: 30rem;
+    width: 100%;
+    position: relative;
+
+    & img {
+        width: 20rem;
+        height: 20rem;
+        border-radius: 50%;
+        object-fit: cover;
+        padding: 0.2rem;
+        border: 0.5px solid transparent;
+        background-color: black;
+    }
+
+    & p {
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+}
+
+.btnCambiarImagen {
+    position: absolute;
+    bottom: 10rem;
+    left: 5rem;
+
+}
+
+.saldoUser {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    width: 100%;
+    margin-top: 2rem;
+
+    & p {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    & h3 {
+        font-size: 2.3rem;
+        font-weight: normal;
+    }
+}
+
+.currentSaldo {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.buttonsUploadImg {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: -6rem;
+}

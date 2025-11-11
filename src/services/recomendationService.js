@@ -4,8 +4,9 @@ import axios from "axios";
 const API_URL = import.meta.env.VITE_API_URL;
 
 class RecomendationService {
-    async getRecommendations() {
-        const res = await axios.get(`${API_URL}/recomendations`);
+    async getRecommendations(page) {
+        const res = await axios.get(`${API_URL}/recomendations?page=${page}&size=10`);
+        console.log("Recomendations fetched:", res.data);
         return res.data;
     }
 

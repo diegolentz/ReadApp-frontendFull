@@ -1,0 +1,8 @@
+.perfilContainer{
+    width: 100vw;
+    height: 92vh;
+    margin-top: 8vh;
+    margin-left: 25rem;
+    display: flex;
+    flex-direction: column;
+}

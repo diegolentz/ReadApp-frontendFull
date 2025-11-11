@@ -1,15 +1,18 @@
 import { Outlet } from "react-router-dom"
 import React from "react"
 import { HeaderComponent } from './../../components/header/header';
+import './perfilView.css'
+import { MenuProfile } from "./../../components/menuProfile/menuProfile";
 
-export const PerfilView = () =>{
-    return(
+export const PerfilView = () => {
+    return (
         <>
-        <HeaderComponent method={()=>{}} withSearch={false} />
-        <div>PerfilView
+            <HeaderComponent  />
+            <div className="perfilContainer">
+                <MenuProfile />
+                <Outlet />
 
-        <Outlet />
-        </div>
+            </div>
 
         </>
     )

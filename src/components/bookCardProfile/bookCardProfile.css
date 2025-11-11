@@ -1,0 +1,67 @@
+.cardProfilecontainer {
+    width: 100%;
+    height: 20rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid black;
+    padding: 1rem;
+    gap: 5rem;
+    justify-content: space-between;
+}
+
+.bookProfileImgInfo {
+    display: flex;
+    gap: 5rem;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    & p {
+        font-size: 2rem;
+    }
+}
+
+.bookProfileImg {
+    background: red;
+    width: 13rem;
+    height: 17rem;
+}
+
+.titleAutorProfile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: -3rem;
+    gap: 2rem;
+}
+
+.bookProfileGenereBtn {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    margin-top: 2rem;
+    height: 100%;
+    align-items: center;
+}
+
+.genereFiccionProfile,
+.priceSell {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+}
+
+.genereFiccionProfile{
+    background-color: brown;
+    color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.priceSell {
+    width: 100%;
+    height: 100%;
+}
