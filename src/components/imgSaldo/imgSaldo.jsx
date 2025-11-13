@@ -74,7 +74,6 @@ export const ImgSaldo = ({ data }) => {
                 <Button
                     className="btnCambiarImagen"
                     variant="contained"
-                    color="success"
                     component="span"
                     sx={{
                         minWidth: 0,
@@ -85,6 +84,7 @@ export const ImgSaldo = ({ data }) => {
                         alignItems: "center",
                         justifyContent: "center",
                         border: "2px solid grey",
+                        backgroundColor: "var(--button-buy)",
                     }}
                     onClick={() => {
                         if (!isvisible) {
@@ -107,7 +107,7 @@ export const ImgSaldo = ({ data }) => {
                 )}
             </div>
 
-            <Divider sx={{ borderColor: '#e6d6c5', borderWidth: 2, marginTop: '2rem' }} />
+            {/* <Divider sx={{ borderColor: '#e6d6c5', borderWidth: 2, marginTop: '2rem' }} /> */}
 
             <div className="saldoUser">
                 <div className="currentSaldo">
@@ -124,6 +124,10 @@ export const ImgSaldo = ({ data }) => {
                     value={sliderValue}
                     onChange={(_, value) => setSliderValue(value)}
                     valueLabelDisplay="auto"
+                    sx={{
+                        color:'green',
+                        height:'1.5rem'
+                    }}
                 />
 
                 <p style={{ fontSize: "2.5rem", fontWeight: "bold", margin: "1.5rem 0" }}>

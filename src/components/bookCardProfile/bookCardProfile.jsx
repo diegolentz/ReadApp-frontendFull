@@ -2,7 +2,12 @@ import React from "react";
 import './bookCardProfile.css'
 import { Button } from "@mui/material";
 
-export const BookCardProfile = ({book}) => {
+export const BookCardProfile = ({book, sell}) => {
+    const sellItem = () => {
+        console.log("Vender libro con id:", book.id);
+        sell(book.id);
+    }
+
 
     return (<>
         <div className="cardProfilecontainer">
@@ -11,15 +16,18 @@ export const BookCardProfile = ({book}) => {
                 <div className="titleAutorProfile">
                     <p>Titulo: {book.title}</p>
                     <p>Autor: {book.author.name} {book.author.lastname}</p>
-                </div>
-            </div>
-            <div className="bookProfileGenereBtn">
                 <div className="genereFiccionProfile">
                     <p>{book.genere}</p>
                 </div>
+                </div>
+            </div>
+            <div className="bookProfileGenereBtn">
                 <div className="priceSell">
                     <p>Precio: ${book.price}</p>
-                    <Button variant="contained" color="error">Vender</Button>
+                    <Button variant="contained" color="error" sx={{
+                        fontSize: '1.5rem'
+                    }}
+                    onClick={sellItem}>Vender</Button>
                 </div>
             </div>
         </div>

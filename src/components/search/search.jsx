@@ -52,8 +52,11 @@ export const SearchComponent = ({ findByText, withFilter, findByFilter }) => {
         onChange={(e) => setQuery(e.target.value)}
         onKeyDown={(e) => { if (e.key === 'Enter') handleSearch(); }}
       />
-      <button className="searchButton" onClick={handleSearch}>
-        <SearchIcon style={{ fontSize: 40, color: 'grey' }} />
+      <button
+        className={`searchButton${!withFilter ? ' noFilterBorder' : ''}`}
+        onClick={handleSearch}
+      >
+        <SearchIcon style={{ fontSize: 40, color: 'black' }} />
       </button>
       {withFilter && (
         <>
@@ -64,14 +67,16 @@ export const SearchComponent = ({ findByText, withFilter, findByFilter }) => {
             aria-expanded={open ? 'true' : undefined}
             onClick={handleClick}
             sx={{
-              height: '5rem',
-              backgroundColor: 'aliceblue',
+              height: '6rem',
+              backgroundColor: 'var(--menu-bkg)',
               width: '12rem',
               padding: 0,
               margin: 0,
-              borderTopRightRadius: '2rem',
+              borderRadius: 0,
+              borderTopRightRadius: '1rem',
               color: 'black',
-              fontSize: '1rem',
+              fontSize: '1.3rem',
+              boxShadow: 'var(--cardShadown)',
             }}
           >
             Categoría

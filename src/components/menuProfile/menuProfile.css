@@ -1,47 +1,57 @@
 .menuProfileContainer {
-    width: 25rem;
+    width: var(--menu-width);
     height: calc(100% - 7rem);
-    background: linear-gradient(360deg, #f1934f 10%, #EDC3AC 100%);
+    background: var(--menu-bkg);
     border: 2px solid #e6d6c5;
     position: fixed;
     left: 0;
     top: 9rem;
-    /* box-shadow: 2px 0 18px #e6d6c580; */
 
     & nav {
         display: flex;
         flex-direction: column;
-        height: 100%;
-        padding: 1rem;
+        height: calc(100vh - var(-header-heigth));
+        padding: 2rem;
     }
 
     & ul {
-        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        /* Espacia los li verticalmente */
     }
-
+    
     & li {
         display: flex;
         align-items: center;
         height: 6rem;
-        padding: 2rem;
-        width: max-content;
+        width: 100%;
+        padding-left: 1rem;
     }
-
+    
     & a {
         text-decoration: none;
         color: black;
         font-size: 1.8rem;
-        text-align: flex-start;
+        text-align: left;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
     }
 }
 
+.menuProfileNav{
+    height: calc(100vh - var(--header-heigth));
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .menuProfileContainer nav li:hover {
-    background: #ffe6c7;
+    background: var(--menuHover);
     box-shadow: 0 2px 10px #e5945c33;
+    border-radius: 1rem;
+    width: 100%;
 
     & a {
         color: brown;

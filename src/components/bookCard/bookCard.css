@@ -1,28 +1,28 @@
 .containerCard {
     width: 30rem;
-    height: 20rem;
+    height: 23rem;
     display: grid;
-    grid-template-rows: auto 1fr  auto;
+    grid-template-rows: auto 1fr auto;
     grid-template-columns: auto 1fr;
     grid-template-areas:
         "title img"
         "info img"
         "info img"
-        "info actions";
+        "actions actions";
     flex-direction: column;
-    padding: 1rem;
-    gap: 1rem;
+    padding: 2rem;
+    gap: 2rem;
     border-radius: 0.5rem;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12), 0 4px 10px rgba(0,0,0,0.06);
-    background-color: rgb(236, 222, 204);
+    box-shadow: var(--cardShadown);
+    background-color: var(--cardBackground);
     transition: transform 0.2s ease-in-out;
-    
+
 }
 
 .containerCard:hover {
-    transform: scale(1.03);
-    filter: brightness(1.2);
-    background-color: rgb(207, 181, 140);
+    /* transform: scale(1.03); */
+    /* filter: brightness(1.09); */
+    background-color: var(--menuHover);
 }
 
 .cardTitle {
@@ -32,11 +32,10 @@
     align-self: start;
     margin-right: 0.5rem;
 
-    /*texto sobrante no se muestra */
     overflow: hidden;
-    /* white-space: nowrap; */
+    white-space: nowrap;
+    text-overflow: ellipsis;
     max-width: 13rem;
-
 }
 
 .icons {
@@ -53,10 +52,15 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    flex-wrap: wrap;
     gap: 1rem;
 
     padding: 0.5rem;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 13rem;
+
 }
 
 .img {
@@ -65,7 +69,7 @@
     object-fit: cover;
 }
 
-.img img{
+.img img {
     width: 100%;
     height: 100%;
     border-radius: 0.5rem;
@@ -73,18 +77,39 @@
 
 .actionsCard {
     grid-area: actions;
-    background-color: green;
+    width: 100%;
     border-radius: 0.5rem;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: space-around;
+    /* padding: 1rem; */
     align-items: center;
     height: 2.5rem;
+
+    /* Estilos base para el <p> dentro de .actionsCard */
+    & p {
+        font-size: 2.3rem;
+        color: green;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 
-.buttonCard {
-    background-color: transparent;
-    color: white;
-    border: none;
-    cursor: pointer;
+
+.buttonCard:hover {
+    background-color: #f0dcdc;
+    color: rgb(182, 29, 29);
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.buttonCard:hover p {
+    color: rgb(182, 29, 29);
+    font-weight: 600;
+    font-size: 1.3rem;
+    transition: color 0.2s, font-size 0.2s, font-weight 0.2s;
 }

@@ -21,7 +21,7 @@
     font-size: 1.7rem;
     border: 1px solid var(--border-input);
     text-align: flex-start;
-    background-color: var(--background-input);
+    background-color: var(--menuHover);
 }
 
 .input-type:focus {

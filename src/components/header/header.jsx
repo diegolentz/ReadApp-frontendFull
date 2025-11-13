@@ -8,6 +8,7 @@ import ArrowDropDownCircleSharpIcon from '@mui/icons-material/ArrowDropDownCircl
 import AutoStoriesSharpIcon from '@mui/icons-material/AutoStoriesSharp';
 import RecommendSharpIcon from '@mui/icons-material/RecommendSharp';
 import ManageAccountsSharpIcon from '@mui/icons-material/ManageAccountsSharp';
+import AttachMoneySharpIcon from '@mui/icons-material/AttachMoneySharp';
 
 export const HeaderComponent = () => {
   const { imgProfile } = useImg();
@@ -44,9 +45,10 @@ export const HeaderComponent = () => {
           <Avatar
             alt="profile"
             src={imgProfile}
-            sx={{ width: '8rem', height: '7.5rem', border: "1.5px solid #333", position: "relative" }}
+            sx={{ width: '7.5rem', height: '7.5rem', boxShadow: "var(--avatarShadown)", position: "relative",
+              border: '3px solid var(--border-input)' }}
           />
-          <ArrowDropDownCircleSharpIcon sx={{ color: "#333", fontSize: 25, position: "absolute", bottom: '0.5rem', right: "1rem", padding: 0 }} />
+          <ArrowDropDownCircleSharpIcon sx={{ color: "var(--button-buy)", fontSize: 25, position: "absolute", bottom: '0.5rem', right: "1rem" }} />
         </IconButton>
         <Menu
           id="profile-menu"
@@ -61,33 +63,62 @@ export const HeaderComponent = () => {
             vertical: 'top',
             horizontal: 'right'
           }}
+          sx={{
+            // background: 'var(--menu-bkg)'
+          }}
         >
             <MenuItem
               onClick={() => { handleMenuClose(); nav("/perfil/datos"); }}
-              sx={{ fontSize: '1.5rem' }}
-            >
-              <ManageAccountsSharpIcon sx={{ mr: 1, color: "purple", fontSize: "1.5rem" }} />
+              sx={{
+                gap: '1rem',
+                fontSize: '1.5rem',
+                '&:hover': {
+                  background: 'var(--menuHover)',
+                  color: 'var(--menuText)',
+                }
+              }}
+              >
+              <ManageAccountsSharpIcon sx={{ color: "purple", fontSize: "2rem", width: "3rem" }} />
               Perfil
             </MenuItem>
           <MenuItem
             onClick={() => { handleMenuClose(); nav("/libros"); }}
-            sx={{ fontSize: '1.5rem' }}
-          >
-            <AutoStoriesSharpIcon sx={{ mr: 1, color: "blue", fontSize: "1.5rem" }} />
-            Libros
+            sx={{
+                // gap: '1rem',
+                fontSize: '1.5rem',
+                '&:hover': {
+                  background: 'var(--menuHover)',
+                  color: 'var(--menuText)',
+                }
+              }}
+            >
+            <AttachMoneySharpIcon sx={{ mr: 1, color: "green", fontSize: "2.5rem", width: "3rem"}} />
+            Comprar Libros
           </MenuItem>
           <MenuItem
             onClick={() => { handleMenuClose(); nav("/recomendaciones"); }}
-            sx={{ fontSize: '1.5rem' }}
-          >
-            <RecommendSharpIcon sx={{ mr: 1, color: "green", fontSize: "1.5rem"  }} />
+            sx={{
+                fontSize: '1.5rem',
+                '&:hover': {
+                  background: 'var(--menuHover)',
+                  color: 'var(--menuText)',
+                }
+              }}
+            >
+            <RecommendSharpIcon sx={{ mr: 1, color: "var(--button-buy)", fontSize: "2.5rem", width: "3rem"  }} />
             Recomendaciones
           </MenuItem>
           <MenuItem
             onClick={() => { handleMenuClose(); logOut(); }}
-            sx={{ fontSize: '1.5rem' }}
-          >
-            <LogoutIcon sx={{ mr: 1, color: "#d9534f", fontSize: "1.5rem" }} />
+            sx={{
+                fontSize: '1.5rem',
+                '&:hover': {
+                  background: 'var(--menuHover)',
+                  color: 'var(--menuText)',
+                }
+              }}
+            >
+            <LogoutIcon sx={{ mr: 1, color: "#d9534f", fontSize: "2rem", width: "3rem" }} />
             Cerrar sesión
           </MenuItem>
         </Menu>

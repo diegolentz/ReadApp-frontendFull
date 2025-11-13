@@ -5,6 +5,7 @@ const API_URL = import.meta.env.VITE_API_URL;
 
 class BookService {
   
+  
   async getGeneres() {
     const res = await axios.get(`${API_URL}/books/genres`);
     return res.data;
@@ -21,13 +22,28 @@ class BookService {
     const res = await axios.get(`${API_URL}/books/search?text=${text}&page=${page}&size=${size}`);
     return res.data;
   }
-
+  
   async getMyBooks() {
     const id = sessionStorage.getItem('user');
     const res = await axios.get(`${API_URL}/books/mybooks/${id}`);
     console.log(res.data);
     return res.data;
   }
+  
+  async searchMyBooksByText(text) {
+    const id = sessionStorage.getItem('user');
+    const res = await axios.get(`${API_URL}/books/mybooks/search?userId=${id}&text=${text}`);
+    return res.data;
+
+  }
+
+  async sellBook(id) {
+      const userId = sessionStorage.getItem('user');
+      const res = await axios.delete(`${API_URL}/user/${userId}/sellbook/${id}`);
+      console.log(res);
+      return res.status;
+  }
+  
 }
 
 export const bookService = new BookService();

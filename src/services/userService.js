@@ -32,6 +32,19 @@ class UserService {
         );
         return res.data;
     }
+
+    async buyBook(bookId) {
+        try{
+
+            const userId = sessionStorage.getItem('user');
+            const res = await axios.post(`${API_URL}/user/${userId}/buybook/${bookId}`);
+            return res.status;
+        }catch(error){
+            console.error("Error buying book:", error);
+            throw error;
+        }
+    }
+
 }
 
 export const userService = new UserService();

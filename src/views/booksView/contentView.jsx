@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from "react";
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
+import { useEffect, useState } from "react";
 import { BookCard } from "../../components/bookCard/bookcard";
 import { HeaderComponent } from "../../components/header/header";
 import { RecomendationCard } from "../../components/recomendationCard/recomendationCard";
+import { SearchComponent } from "../../components/search/search";
 import { bookService } from "../../services/bookService";
 import { recomendationService } from "../../services/recomendationService";
 import "./contentView.css";
-import { SearchComponent } from "../../components/search/search";
-import Pagination from '@mui/material/Pagination';
-import Stack from '@mui/material/Stack';
+import React from 'react';
+import { userService } from '../../services/userService';
 
 export const BookView = ({ isBooks }) => {
   const [data, setData] = useState([]);
@@ -40,22 +42,31 @@ export const BookView = ({ isBooks }) => {
     }
   };
 
+  const buyBook = async (bookId) => {
+    const res = await userService.buyBook(bookId);
+    if (res <= 299){
+      console.log("Compra exitosa");
+    }
+  }
+
+  // Carga inicial y cuando cambia el tipo de vista; no reiniciamos página en cada cambio de página
   useEffect(() => {
     const fetchData = async () => {
       setData([]);
+      const firstPage = 0; // backend espera base 0
       if (isBooks) {
-        const res = await bookService.getAll(page - 1);
+        const res = await bookService.getAll(firstPage);
         setData(res.content);
         setPages(res.totalPages);
       } else {
-        const res = await recomendationService.getRecommendations(page - 1);
+        const res = await recomendationService.getRecommendations(firstPage);
         setData(res.content);
         setPages(res.totalPages);
       }
+      setPage(1); // reiniciar a 1 solo cuando cambia isBooks
     };
     fetchData();
-    setPage(1);
-  }, [isBooks, page]);
+  }, [isBooks]);
 
   return (
     <>
@@ -67,7 +78,7 @@ export const BookView = ({ isBooks }) => {
         <div className="viewsContainer">
           {isBooks
             ? data.map((rec, index) => (
-              <BookCard key={index} book={rec} />
+              <BookCard key={index} book={rec} method={buyBook}/>
             ))
             : data.map((rec, index) => (
               <RecomendationCard key={index} recomendation={rec} />
@@ -87,9 +98,9 @@ export const BookView = ({ isBooks }) => {
                 '& .MuiPaginationItem-root': {
                   fontSize: '1.3rem',
                   // padding: '0.5rem',
-                  backgroundColor: 'red',
-                  '&:hover': { backgroundColor: 'darkred', color: 'black' },
-                  '&.Mui-selected': { backgroundColor: 'orange', color: 'black' },
+                  backgroundColor: 'white',
+                  '&:hover': { backgroundColor: 'white', color: 'black' },
+                  '&.Mui-selected': { backgroundColor: 'var(--menu-bkg)', color: 'black' },
                 },
               }}
             />
