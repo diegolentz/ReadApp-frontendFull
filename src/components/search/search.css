@@ -1,0 +1,45 @@
+.searchContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 6rem;
+    width: 100vw;
+    /* margin-top: var(--header-height); */
+}
+
+.searchInput {
+    height: 100%;
+    font-size: 1.8rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    width: 50rem;
+    background-color: var(--cardBackground);
+    outline: none;
+    box-shadow: var(--cardShadown);
+    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem;
+    
+}
+
+.searchInput:focus,
+.searchInput:focus-visible {
+    outline: none;
+}
+
+.noFilterBorder{
+    border-bottom-right-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.searchButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 7rem;
+    cursor: pointer;
+    border: none;
+    background-color: var(--menu-bkg);
+    padding: 1rem;
+    box-shadow: var(--cardShadown);
+}

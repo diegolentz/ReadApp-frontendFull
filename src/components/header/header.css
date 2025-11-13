@@ -1,0 +1,89 @@
+header {
+    width: 100vw;
+    height: var(--header-heigth);
+    padding-right: 2rem;
+    background: var(--background-color);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(12px);
+}
+
+
+.headerLogo {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    width: var(--menu-width);
+    background-color: var(--menu-bkg);
+    height: 100%;
+}
+
+.headerLinks {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+    margin-right: 3rem;
+}
+
+.headerLinks a {
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+}
+
+.headerImg {
+    width: 10rem;
+    height: 5rem;
+}
+
+
+.headerImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform-origin: center;
+    border-radius: 0.5rem;
+    filter: grayscale(60%);
+}
+
+.headerActions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.buttonProfile {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.headerProfile {
+    width: 6.5rem;
+    height: 6.5rem;
+    border-radius: 50%;
+    /* border: 2px solid black; */
+    
+    & img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+}
+
+
+
