@@ -49,6 +49,14 @@ export const BookView = ({ isBooks }) => {
     }
   }
 
+  const valorateRecomendation = async (recId, rate, comment) => {
+    const res = await recomendationService.rateRecommendation(recId,rate, comment);
+    if (res) {
+
+      console.log("Valoración exitosa");
+    }
+  }
+
   // Carga inicial y cuando cambia el tipo de vista; no reiniciamos página en cada cambio de página
   useEffect(() => {
     const fetchData = async () => {
@@ -81,7 +89,7 @@ export const BookView = ({ isBooks }) => {
               <BookCard key={index} book={rec} method={buyBook}/>
             ))
             : data.map((rec, index) => (
-              <RecomendationCard key={index} recomendation={rec} />
+              <RecomendationCard key={index} recomendation={rec} method={valorateRecomendation} isEdit={false} />
             ))}
         </div>
         <div className="pagination">

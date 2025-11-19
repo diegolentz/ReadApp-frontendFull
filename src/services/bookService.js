@@ -26,7 +26,6 @@ class BookService {
   async getMyBooks() {
     const id = sessionStorage.getItem('user');
     const res = await axios.get(`${API_URL}/books/mybooks/${id}`);
-    console.log(res.data);
     return res.data;
   }
   

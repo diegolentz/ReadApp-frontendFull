@@ -17,7 +17,8 @@ export const AppRouter = () => {
         <Route path="/recomendaciones" element={<BookView isBooks={false} />} />
         <Route path="/perfil" element={<PerfilView />}>
           <Route path="datos" element={<PerfilData />} />
-          <Route path="misLibros" element={<PerfilMyBooks />} />
+          <Route path="misLibros" element={<PerfilMyBooks isBook={true} />} />
+          <Route path="misRecomendaciones" element={<PerfilMyBooks isBook={false} />} />
         </Route>
       </Routes>
     </BrowserRouter>

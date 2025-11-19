@@ -54,13 +54,15 @@ a {
 
 :root {
     --button-acept: #83BD6E;
+    --button-buy: #F2783B;
+    
+    --error-msg: rgb(255, 56, 56);
+    
     --text-login: rgb(20, 20, 20);
     --border-input: rgba(255, 255, 255, 0.3);
     --background-input: #E4CFCF;
-    --error-msg: rgb(255, 56, 56);
     --background-login: rgba(116, 94, 80, 0.6);
     --backGround-color: #FFF7ED;
-    --button-buy: #F2783B;
     --menu-bkg: #ffbe93;
     --menuHover: #ffe6c7;
 
