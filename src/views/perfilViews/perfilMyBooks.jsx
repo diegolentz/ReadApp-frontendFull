@@ -6,9 +6,12 @@ import { recomendationService } from "../../services/recomendationService";
 import './perfilMyBooks.css';
 import React from 'react';
 import { RecomendationCard } from "../../components/recomendationCard/recomendationCard";
+import { Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 export const PerfilMyBooks = ({ isBook }) => {
     const [data, setData] = useState([])
+    const nav = useNavigate();
 
     const searchByText = async (text) => {
         const results = await bookService.searchMyBooksByText(text);
@@ -27,11 +30,11 @@ export const PerfilMyBooks = ({ isBook }) => {
 
     const sellBook = async (id) => {
         const res = await bookService.sellBook(id);
-        if(res <= 300) {
+        if (res <= 300) {
             const updatedBooks = data.filter(book => book.id !== id);
             setData(updatedBooks);
         }
-        else{
+        else {
             alert(res);
         }
     }
@@ -52,30 +55,37 @@ export const PerfilMyBooks = ({ isBook }) => {
 
     return (
         <>
-            <div className="containerData">
-             {isBook && (
+            {isBook && (
                 <>
-                    <h2>Mis Libros</h2>
-                    <SearchComponent findByText={searchByText} withFilter={false} findByFilter={undefined} />
-                    {data.map((book) => (
-                        <div className="bookCardContainer" key={book.id}>
-                            <BookCardProfile book={book} key={book.id} sell={sellBook} />
-                        </div>
-                    ))}
+                    <div className="containerData">
+                        <h2>Mis Libros</h2>
+                        <SearchComponent findByText={searchByText} withFilter={false} findByFilter={undefined} />
+                        {data.map((book) => (
+                            <div className="bookCardContainer" key={book.id}>
+                                <BookCardProfile book={book} key={book.id} sell={sellBook} />
+                            </div>
+                        ))}
+                    </div>
                 </>
             )}
             {!isBook && (
                 <>
-                    <h2>Mis Recomendaciones</h2>
-                    <SearchComponent findByText={searchRecsByText} withFilter={false} findByFilter={undefined} />
-                    {data.map((recommendation) => (
-                        <div className="recommendationCardContainer" key={recommendation.id}>
-                            <RecomendationCard recomendation={recommendation} key={recommendation.id} method={undefined} isEdit={true} />
-                        </div>
-                    ))}
+                    <div className="containerData">
+
+                        <h2>Mis Recomendaciones</h2>
+                        <SearchComponent findByText={searchRecsByText} withFilter={false} findByFilter={undefined} />
+                        <Button
+                        variant="contained"
+                        style={{ fontSize: '1.8rem',    marginBottom: '1rem', backgroundColor: 'var(--button-acept)' }}
+                        onClick={() => nav('/perfil/crear-recommendacion')}>Crear Recomendacion</Button>
+                        <div className="recommendationCardContainer" >
+                        {data.map((recommendation) => (
+                                <RecomendationCard recomendation={recommendation} key={recommendation.id} method={undefined} isEdit={true} />
+                            ))}
+                            </div>
+                    </div>
                 </>
             )}
-            </div>
 
 
         </>

@@ -12,9 +12,22 @@
         font-size: 3.5rem;
         font-weight: bold;
     }
- 
+
 }
 
-.bookCardContainer{
+.bookCardContainer {
     width: 80%;
+}
+
+.recommendationCardContainer {
+    width: 80vw;
+    display: grid;
+    height: auto;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 40rem));
+    grid-auto-rows: auto;
+    padding: 3rem;
+    gap: 3rem;
+    place-items: center;
+    align-content: center;
+    justify-content: space-around;
 }

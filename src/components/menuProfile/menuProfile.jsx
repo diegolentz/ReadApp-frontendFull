@@ -25,9 +25,6 @@ export const MenuProfile = () => {
                         {/* <RecommendSharpIcon sx={{ color: "green", fontSize: "2rem", width: "3rem" }} /> */}
                         <a href="/perfil/misRecomendaciones">Mis Recomendaciones</a></li>
                     <li>
-                        {/* <StarPurple500SharpIcon sx={{ color: "yellow", fontSize: "2rem", width: "3rem" }} /> */}
-                        <a href="/">Mis Valoraciones</a></li>
-                    <li>
                         {/* <GroupAddSharpIcon sx={{ color: "red", fontSize: "2rem", width: "3rem" }} /> */}
                         <a href="/">Buscar Amigos</a></li>
                 </ul>
